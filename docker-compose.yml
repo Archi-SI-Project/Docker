@@ -1,23 +1,31 @@
-version: '3.8'
 services:
   front:
     build: ./front
     ports:
-      - "3000:80"         # Port local : port nginx
+      - "80:80"         # Port local : port nginx
     depends_on:
-      - service1
-      - service2
+      - middleware
 
   service1:
     build: ./service1
     ports:
-      - "8081:8080"
+      - "8080:8080"
     environment:
       - JAVA_OPTS=
   
   service2:
     build: ./service2
     ports:
-      - "8082:8080"
+      - "8081:8081"
     environment:
       - JAVA_OPTS=
+
+  middleware:
+    build: ./middleware
+    ports:
+      - "8082:8082"
+    environment:
+      - JAVA_OPTS=
+    depends_on:
+      - service1
+      - service2

@@ -2,7 +2,7 @@ FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
-COPY ./Service1.jar  app.jar
+COPY ./service1.jar  app.jar
 
 EXPOSE 8080
 
