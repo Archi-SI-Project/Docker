@@ -23,14 +23,14 @@ function Copy-SingleJar {
 }
 
 # Utilisation pour tes services
-Copy-SingleJar -SourcePath "..\Service1\Service1\demo\target" -DestinationPath ".\service1\service1.jar"
+# Copy-SingleJar -SourcePath "..\Service1\Service1\demo\target" -DestinationPath ".\service1\service1.jar"
 Copy-SingleJar -SourcePath "..\Service2\Service2\demo\target" -DestinationPath ".\service2\service2.jar"
-Copy-SingleJar -SourcePath "..\Middleware\demo\demo\target" -DestinationPath ".\middleware\middleware.jar"
+# Copy-SingleJar -SourcePath "..\Middleware\demo\demo\target" -DestinationPath ".\middleware\middleware.jar"
 # Nettoyage de ./front en excluant Dockerfile et nginx.conf
-Get-ChildItem -Path ".\front" -Recurse | Where-Object {
-    $_.Name -notin @('Dockerfile', 'nginx.conf')
-} | Remove-Item -Recurse -Force -ErrorAction Stop
+# Get-ChildItem -Path ".\front" -Recurse | Where-Object {
+#     $_.Name -notin @('Dockerfile', 'nginx.conf')
+# } | Remove-Item -Recurse -Force -ErrorAction Stop
 
-# Copier le contenu du dossier ../front/ vers ./front
-Copy-Item -Path "..\front\*" -Destination ".\front" -Recurse -Force
+# # Copier le contenu du dossier ../front/ vers ./front
+# Copy-Item -Path "..\front\*" -Destination ".\front" -Recurse -Force
 
