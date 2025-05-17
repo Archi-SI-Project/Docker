@@ -13,7 +13,7 @@ const axiosInstance = axios.create({
         'Accept': 'application/json',
         'Content-Type': 'application/json',
     },
-    timeout: 5000, // Optional: Set a timeout for requests
+    // timeout: 5000, // Optional: Set a timeout for requests
 });
 
 const filterMovies = (movie: MovieDto, genre: string, duration: string, creationDate: string, searchTerm: string) => {
